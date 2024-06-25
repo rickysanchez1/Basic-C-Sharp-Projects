@@ -28,13 +28,14 @@ namespace BranchingSubmissionAssignment
                 int packageLength = Convert.ToInt32(Console.ReadLine());
                 int packageDimension = packageWidth + packageHeight + packageLength;
                 int packageQuote = packageWidth * packageHeight * packageLength * packageWeight / 100;
+                string packageDollar = packageQuote.ToString("C");
                 if (packageDimension > 50)
                 {
                     Console.WriteLine("Package too big to be shipped via Package Express.");
                 }
                 else
                 {
-                    Console.WriteLine("$" + packageQuote + ".00 Is the cost to mail youre package");
+                    Console.WriteLine(packageDollar + " Is the cost to mail youre package.");
                 }
             }
 
