@@ -1,0 +1,7 @@
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\bin\Debug\BooleanComparionWhile.exe.config
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\bin\Debug\BooleanComparionWhile.exe
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\bin\Debug\BooleanComparionWhile.pdb
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\obj\Debug\BooleanComparionWhile.csproj.AssemblyReference.cache
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\obj\Debug\BooleanComparionWhile.csproj.CoreCompileInputs.cache
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\obj\Debug\BooleanComparionWhile.exe
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\BooleanComparionWhile\BooleanComparionWhile\obj\Debug\BooleanComparionWhile.pdb
