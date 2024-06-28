@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sinp3\\OneDrive\\Documents\\Github\\Basic-C-Sharp-Projects\\ArraysAndLists\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{69490E10-0A7F-4279-A758-6AA567FD9043}|ArraysAndLists\\ArraysAndLists.csproj|c:\\users\\sinp3\\onedrive\\documents\\github\\basic-c-sharp-projects\\arraysandlists\\arraysandlists\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69490E10-0A7F-4279-A758-6AA567FD9043}|ArraysAndLists\\ArraysAndLists.csproj|solutionrelative:arraysandlists\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sinp3\\OneDrive\\Documents\\Github\\Basic-C-Sharp-Projects\\ArraysAndLists\\ArraysAndLists\\Program.cs",
+              "RelativeDocumentMoniker": "ArraysAndLists\\Program.cs",
+              "ToolTip": "C:\\Users\\sinp3\\OneDrive\\Documents\\Github\\Basic-C-Sharp-Projects\\ArraysAndLists\\ArraysAndLists\\Program.cs",
+              "RelativeToolTip": "ArraysAndLists\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAiwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T21:10:28.595Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
