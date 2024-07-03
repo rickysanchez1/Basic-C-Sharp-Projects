@@ -45,7 +45,7 @@ namespace ConsoleAppAssignment
                 Console.WriteLine("k variable is less than 10 this many times");
             }
             // loop where the comparison that’s used to determine whether to continue iterating the loop is a “<=” operator
-            for (int a = 2; a <= 5; a++ )
+            for (int a = 2; a <= 5; a++)
             {
                 Console.WriteLine("Variable a's value is less than or equal to 5 this many times.");
             }
@@ -77,7 +77,7 @@ namespace ConsoleAppAssignment
                 {
                     Console.WriteLine("Invalid! Input is not on the list");
                 }
-                
+
                 // prints off each string in the array one at a time.
                 Console.WriteLine(userGuess);
             }
@@ -90,40 +90,67 @@ namespace ConsoleAppAssignment
             string userSearch = Console.ReadLine();
             string userLower = userSearch.ToLower();
 
-            // A loop that iterates through the list and then displays the indices of the items matching the user-selected text
+            // empty list to store found indices.
+            List<int> foundIndices = new List<int>();
+            // A loop that iterates through the list and adds duplicate indices to the empty list
             for (int i = 0; i < identicalStrings.Count; i++)
             {
                 if (identicalStrings[i] == userLower)
                 {
-                    int indices = 0;
-                    foreach (string item in identicalStrings)
-                    {
-                        Console.WriteLine(item);
-                        //Console.WriteLine(userLower + "! Match found.");
-                        //Console.WriteLine("Index located at: " + indices);
-                        indices++;
-                    }
-                    //int index = identicalStrings.IndexOf(userLower);
-                    //Console.WriteLine(userLower + "! Match found.");
-                    //Console.WriteLine("Index located at: " + index);
+                    // Adding found indices to list
+                    foundIndices.Add(i);
                 }
-                else
+
+            }
+            // loop to iterate input to search for items in list.
+            if (foundIndices.Count > 0)
+            {
+                foreach (int item in foundIndices)
                 {
-                    Console.WriteLine("No match found.");
+                    Console.WriteLine("Indices found at: " + item);
                 }
             }
-            
-           
+            else
+            {
+                Console.WriteLine("No match found.");
+            }
 
-            //foreach (string item in names)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            // A list of strings that has at least two identical strings in the list
+            List<string> twoIdentical = new List<string> { "A", "B", "C", "D", "C" };
+
+            // List of strings seen
+            List<string> state = new List<string>();
+
+            for (int i = 0; i < twoIdentical.Count; i++)
+            {
+                if (state.IndexOf(twoIdentical[i] ) > -1 )
+                {
+                    // has seen string already
+                    // echo is unique
+                } else
+                {
+                    // has not seen string
+                    // echo is duplicate
+                    // push to state (acknowledge it's been seen)
+                }
+            }
+
+
+                // displays a message showing the string and whether or not it has already appeared in the list
+                //A - this item is unique
+                //B - this item is unique
+                //C - this item is unique
+                //D - this item is unique
+                //C - this item is a duplicate
 
 
 
 
-            Console.ReadLine();
+
+
+
+
+                Console.ReadLine();
 
         }
 
