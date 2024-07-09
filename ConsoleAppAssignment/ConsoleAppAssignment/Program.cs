@@ -123,34 +123,22 @@ namespace ConsoleAppAssignment
 
             for (int i = 0; i < twoIdentical.Count; i++)
             {
-                if (state.IndexOf(twoIdentical[i] ) > -1 )
+                // state has seen string already
+                if (state.Contains(twoIdentical[i]))
                 {
-                    // has seen string already
-                    // echo is unique
-                } else
+                    // if the comparing string has seen this string, it will log it as a duplicate.
+                    Console.WriteLine(twoIdentical[i] + " - This item is a duplicate.");
+                }
+                else
                 {
-                    // has not seen string
-                    // echo is duplicate
-                    // push to state (acknowledge it's been seen)
+                    // state has not seen string
+                    state.Add(twoIdentical[i]);
+                    // Push to state (acknowledge it's been seen)
+                    Console.WriteLine(twoIdentical[i] + "- Is unique.");
                 }
             }
 
-
-                // displays a message showing the string and whether or not it has already appeared in the list
-                //A - this item is unique
-                //B - this item is unique
-                //C - this item is unique
-                //D - this item is unique
-                //C - this item is a duplicate
-
-
-
-
-
-
-
-
-                Console.ReadLine();
+            Console.ReadLine();
 
         }
 
