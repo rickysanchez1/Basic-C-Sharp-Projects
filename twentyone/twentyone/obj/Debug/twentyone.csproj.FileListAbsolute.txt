@@ -1,0 +1,7 @@
+C:\Users\sinp3\source\repos\twentyone\twentyone\obj\Debug\twentyone.csproj.AssemblyReference.cache
+C:\Users\sinp3\source\repos\twentyone\twentyone\obj\Debug\twentyone.csproj.CoreCompileInputs.cache
+C:\Users\sinp3\source\repos\twentyone\twentyone\bin\Debug\twentyone.exe.config
+C:\Users\sinp3\source\repos\twentyone\twentyone\bin\Debug\twentyone.exe
+C:\Users\sinp3\source\repos\twentyone\twentyone\bin\Debug\twentyone.pdb
+C:\Users\sinp3\source\repos\twentyone\twentyone\obj\Debug\twentyone.exe
+C:\Users\sinp3\source\repos\twentyone\twentyone\obj\Debug\twentyone.pdb
