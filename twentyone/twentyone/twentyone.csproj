@@ -44,12 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
-    <Compile Include="..\..\..\..\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\Deck.cs">
-      <Link>Deck.cs</Link>
-    </Compile>
+    <Compile Include="Deck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
