@@ -12,8 +12,8 @@ namespace twentyone
         {
             // Instantiate Deck method
             Deck deck = new Deck();
-            int timesShuffled = 0;
-            deck = Shuffle(deck: deck, out timesShuffled, 3);
+
+            deck.Shuffle(3);
 
             // Loop through each card and display its face and suit
             foreach (Card card in deck.Cards)
@@ -21,35 +21,11 @@ namespace twentyone
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
             Console.WriteLine(deck.Cards.Count);
-            Console.WriteLine("Times shuffled: {0}", timesShuffled);
 
             Console.ReadLine();
         }
 
-        // takes a list of cards and returns a shuffled deck of cards. Out sends value to variable timesShuffled
-        public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
-        {
-            // Adding variable to count how many times loops ran
-            timesShuffled = 0;
-            for (int i = 0; i < times; i++)
-            {
-                // Increment timesShuffled by 1
-                timesShuffled++;
-                List<Card> TempList = new List<Card>();
-                Random random = new Random();
-
-                while (deck.Cards.Count > 0)
-                {
-                    int randomIndex = random.Next(0, deck.Cards.Count);
-                    TempList.Add(deck.Cards[randomIndex]);
-                    deck.Cards.RemoveAt(randomIndex);
-                }
-                deck.Cards = TempList;
-            }
-            
-            return deck;
-
-        }
+        
         // 
         //public static Deck Shuffle(Deck deck, int times)
         //{
