@@ -10,7 +10,9 @@ namespace twentyone
     {
         static void Main(string[] args)
         {
-            // Instantiate Deck method
+
+
+            // Class Name, variable name = new to create a new instance of this method, method name
             Deck deck = new Deck();
 
             deck.Shuffle(3);
