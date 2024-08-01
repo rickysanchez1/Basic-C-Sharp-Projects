@@ -12,9 +12,9 @@ namespace MethodsandObjects
         {
             Employee fullName = new Employee();
 
-            // Created new list for method to loop and display
-            fullName.FirstName = new List<string>() { "Sample" };
-            fullName.LastName = new List<string>() { "Student"};
+            //  Calling method
+            fullName.FirstName = "Sample";
+            fullName.LastName = "Student";
             // Calling superclass method SayName through the Employee class
             fullName.SayName();
 

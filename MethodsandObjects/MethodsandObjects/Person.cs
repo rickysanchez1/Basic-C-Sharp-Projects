@@ -16,20 +16,10 @@ namespace MethodsandObjects
         // Method that takes no parameters and writes the persons full name
         public void SayName()
         {
-            // Go through each parameter from FirstName
-            foreach (string fname in FirstName)
-            {
-                // Go through each parameter from LastName
-                foreach (string lname in LastName)
-                {
-                    // Display names
-                    Console.WriteLine("Name: " + fname + lname);
-                }
-            }
-
+            Console.WriteLine("Name: " + FirstName + LastName);
         }
 
-        public List<string> FirstName  { get; set; }
-        public List<string> LastName  { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
