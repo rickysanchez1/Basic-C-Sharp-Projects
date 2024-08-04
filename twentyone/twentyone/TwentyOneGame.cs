@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace twentyone
 {
     // : allows this class to inherit from the Game class
-    public class TwentyOneGame : Game
+    public class TwentyOneGame : Game, IWalkAway
     {
         // Override is needed to implement the method from the inheriting class
         public override void Play()
@@ -18,6 +18,12 @@ namespace twentyone
         {
             Console.WriteLine("21 Players: ");
             base.ListPlayers();
+        }
+        // method must match interface
+        public void WalkAway(Player player)
+        {
+            throw new NotImplementedException();
+
         }
     }
 }
