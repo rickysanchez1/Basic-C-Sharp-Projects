@@ -10,7 +10,7 @@ namespace AbstractClass
      public class Employee : Person
     {
         // Implementing method from Person class
-        public void SayName()
+        public override void SayName()
         {
 
         }

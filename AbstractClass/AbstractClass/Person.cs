@@ -12,10 +12,7 @@ namespace AbstractClass
         public string firstName { get; set; }
         public string lastName { get; set; }
 
-        // Method
-        public virtual void SayName()
-        {
-
-        }
+        // Abstract method SayName()
+        public abstract void SayName();
     }
 }
