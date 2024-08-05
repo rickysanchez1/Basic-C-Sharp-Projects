@@ -14,5 +14,7 @@ namespace AbstractClass
 
         // Abstract method SayName()
         public abstract void SayName();
+
+
     }
 }

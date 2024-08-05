@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace AbstractClass
 {
-    // Inherit from Person class
-     public class Employee : Person
+    // Inherit from Person class and inherit from interface IQuittable
+     public class Employee : Person, IQuittable
     {
         // Implementing method from Person class
         public override void SayName()
         {
 
         }
+
+        //
+        public void Quit()
+        {
+            Console.WriteLine("Quitting time.");
+        }
+
+        
     }
 }
