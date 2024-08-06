@@ -10,25 +10,29 @@ namespace twentyone
     {
         static void Main(string[] args)
         {
-            //List<Game> games = new List<Game>();
-
-            TwentyOneGame game = new TwentyOneGame();
-            game.Players = new List<string>() { "Jesse", "Bill", "Bob" };
-            game.ListPlayers();
-            Console.ReadLine();
+            // creating game object
+            Game game = new TwentyOneGame();
+            // Creating new list 
+            game.Players = new List<Player>();
+            Player player = new Player();
+            player.Name = "Jesse";
+            // += Adding player
+            game += player;
+            // -= Removing player
+            game -= player;
 
             // Class Name, variable name = new to create a new instance of this method, method name
-            //Deck deck = new Deck();
-            //deck.Shuffle(3);
+            Deck deck = new Deck();
+            deck.Shuffle(3);
 
-            //// Loop through each card and display its face and suit
-            //foreach (Card card in deck.Cards)
-            //{
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            //}
-            //Console.WriteLine(deck.Cards.Count);
+            // Loop through each card and display its face and suit
+            foreach (Card card in deck.Cards)
+            {
+                Console.WriteLine(card.Face + " of " + card.Suit);
+            }
+            Console.WriteLine(deck.Cards.Count);
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 

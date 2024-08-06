@@ -8,7 +8,8 @@ namespace twentyone
 {
     public abstract class Game
     {
-        public List<string> Players { get; set; }
+        // Using Player instead of string since we have a player class
+        public List<Player> Players { get; set; }
         public string Name { get; set; }
         public string Dealer { get; set; }
 
@@ -17,9 +18,9 @@ namespace twentyone
         // Virtual method have implementation but can be overriden
         public virtual void ListPlayers()
         {
-            foreach (string player in Players)
+            foreach (Player player in Players)
             {
-                Console.WriteLine(player);
+                Console.WriteLine(player.Name);
             }
         }
     }
