@@ -8,7 +8,7 @@ namespace twentyone
 {
     // a class is a model, a design for an object
     // the card class has a property of data type string called Suit. you can get or set this property.
-    public class Card
+    public struct Card
     {        
         // public data type name of property {object properties can only get and set}
         public Suit Suit { get; set; }
