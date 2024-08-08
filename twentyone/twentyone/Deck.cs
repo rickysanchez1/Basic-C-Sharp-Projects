@@ -13,29 +13,17 @@ namespace twentyone
         {
             Cards = new List<Card>();
 
-            // for each face of 13 cards
-            List<string> Suits = new List<string>() { "Clubs", "Hearts", "Diamonds", "Spades" };
-            List<string> Faces = new List<string>()
-                {
-                    "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-                    "Jack", "Queen", "King", "Ace"
-                };
-            // foreach item in Faces 
-            foreach (string face in Faces)
+           for (int i = 0; i < 13; i++)
             {
-                // pass each face through suits
-                foreach (string suit in Suits)
+                for (int j = 0; j < 4; j++)
                 {
-                    // each loop a new card is created a new card to have values assigned
                     Card card = new Card();
-                    // Add suit value
-                    card.Suit = suit;
-                    // add face value
-                    card.Face = face;
-                    // Add each face/suit to the Cards list
+                    card.Face = (Face)i;
+                    card.Suit = (Suit)j;
                     Cards.Add(card);
                 }
             }
+            
         }
         // Property
         public List<Card> Cards { get; set; }

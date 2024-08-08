@@ -10,16 +10,18 @@ namespace twentyone
     {
         static void Main(string[] args)
         {
-            // creating game object
-            Game game = new TwentyOneGame();
-            // Creating new list 
-            game.Players = new List<Player>();
-            Player player = new Player();
-            player.Name = "Jesse";
-            // += Adding player
-            game += player;
-            // -= Removing player
-            game -= player;
+            //// creating game object
+            //Game game = new TwentyOneGame();
+            //// Creating new list 
+            //game.Players = new List<Player>();
+            //Player player = new Player();
+            //player.Name = "Jesse";
+            //// += Adding player
+            //game += player;
+            //// -= Removing player
+            //game -= player;
+
+            
 
             // Class Name, variable name = new to create a new instance of this method, method name
             Deck deck = new Deck();
