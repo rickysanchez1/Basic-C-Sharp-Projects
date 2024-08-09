@@ -86,6 +86,8 @@ namespace Lambda
             // Created a lambda expression to add names names to new list if FirstName "Joe"
             List<Employee> joeList = employees.Where(x => x.FirstName == "Joe").ToList();
 
+            // Created a lambda expression to add names where ID is greater than 5
+            List<Employee> fiveGreater = employees.Where(x => x.ID > 5).ToList();
             // Double checking joeList
             Employee emp = joeList[0];
             Console.WriteLine(emp.FirstName);
