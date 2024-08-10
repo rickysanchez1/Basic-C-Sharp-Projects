@@ -18,7 +18,7 @@ namespace twentyone
             // Take the first card from the deck and add it to hand.
             Hand.Add(Deck.Cards.First());
             // Access and display the first card in Deck and converts it to a string
-            Console.WriteLine(Deck.Cards.First().ToString() + "\\n");
+            Console.WriteLine(Deck.Cards.First().ToString() + "\n");
             // Access first card from the deck and remove it from deck
             Deck.Cards.RemoveAt(0);
         }

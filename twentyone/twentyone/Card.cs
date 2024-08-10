@@ -13,6 +13,11 @@ namespace twentyone
         // public data type name of property {object properties can only get and set}
         public Suit Suit { get; set; }
         public Face Face { get; set; }
+        public override string ToString()
+        {
+            // Custom toString method to display the values of each card.
+            return string.Format("{0} of {1}", Face, Suit);
+        }
     }
     public enum Suit
     {

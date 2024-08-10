@@ -10,34 +10,42 @@ namespace twentyone
     {
         static void Main(string[] args)
         {
-            //// creating game object
-            //Game game = new TwentyOneGame();
-            //// Creating new list 
-            //game.Players = new List<Player>();
-            //Player player = new Player();
-            //player.Name = "Jesse";
-            //// += Adding player
-            //game += player;
-            //// -= Removing player
-            //game -= player;
+            // Welcome new player 
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            // create var for new player
+            string playerName = Console.ReadLine();
+            Console.WriteLine("And how much money did you bring today?");
+            int bank = Convert.ToInt32(Console.ReadLine());
+            // {0} is a variable placeholder for playerName
+            Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+            string answer = Console.ReadLine().ToLower();
+            // if player is actively playing
+            if (answer == "yes" || answer == "yeah" || answer == "yea" || answer == "ya")
+            {
+                // Create new player using constructor in player class to set the properties
+                Player player = new Player(playerName, bank);
+                // create new instance of twentyonegame
+                Game game = new TwentyOneGame();
+                // Add current player to twentyonegame
+                game += player;
+                // player is currently playing
+                player.isActivelyPlaying = true;
+                // whilte player is actively playing, play game
+                while (player.isActivelyPlaying && player.Balance > 0)
+                {
+                    game.Play();
+                }
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
+            }
+            Console.WriteLine("Feel free to look around the casino. Bye for now.");
 
-            Card card1 = new Card();
-            Card card2 = card1;
-            card1.Face = Face.Eight;
-            card2.Face = Face.King;
+            
 
-            Console.WriteLine(card1.Face);
+            
 
-            // Class Name, variable name = new to create a new instance of this method, method name
-            //Deck deck = new Deck();
-            //deck.Shuffle(3);
-
-            //// Loop through each card and display its face and suit
-            //foreach (Card card in deck.Cards)
-            //{
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            //}
-            //Console.WriteLine(deck.Cards.Count);
+           
+          
 
             Console.ReadLine();
         }
