@@ -111,7 +111,39 @@ namespace twentyone
                 }
             }
             Dealer.isBusted = TwentyOneRules.IsBusted(Dealer.Hand);
-            Dealer.Stay = TwentyOneRules
+            Dealer.Stay = TwentyOneRules.ShoulderDealerStay(Dealer.Hand);
+            while (!Dealer.Stay && !Dealer.isBusted)
+            {
+                Console.WriteLine("Dealer is hitting...");
+                Dealer.Deal(Dealer.Hand);
+                Dealer.isBusted = TwentyOneRules.IsBusted(Dealer.Hand);
+                Dealer.Stay = TwentyOneRules.ShoulderDealerStay(Dealer.Hand);
+            }
+            if (Dealer.Stay)
+            {
+                Console.WriteLine("Dealer is staying.");
+
+            }
+            if (Dealer.isBusted)
+            {
+                Console.WriteLine("Dealer Busted!");
+                // loop through each key value pair in Bets
+                foreach (KeyValuePair<Player, int> entry in Bets)
+                {
+                    Console.WriteLine("{0} won {1}!", entry.Key.Name, entry.Value);
+                    // Get list of players where their name == name in dictionary, their balance, what they bet *2 and add to their balance 
+                    Players.Where(x => x.Name == entry.Key.Name).First().Balance += (entry.Value * 2);
+                    // subtract balance from dealer.
+                    Dealer.Balance -= entry.Value;
+                }
+                return;
+                    
+            }
+            foreach (Player player in Players)
+            {
+                // this boolean can now have the value null
+                bool? playerWon = TwentyOneRules.CompareHands(player.Hand, Dealer, Hand);
+            }
         }
         public override void ListPlayers()
         {

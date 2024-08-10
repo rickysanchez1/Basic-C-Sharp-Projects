@@ -61,7 +61,16 @@ namespace twentyone
         }
         public static bool ShoulderDealerStay(List<Card> Hand)
         {
-
+            int[] possibleHandValues = GetAllPossibleHandValues(Hand);
+            foreach (int value in possibleHandValues)
+            {
+                if (value > 16 && value < 22)
+                {
+                    return true;
+                }
+                    
+            }
+            return false;
         }
     }
 }
