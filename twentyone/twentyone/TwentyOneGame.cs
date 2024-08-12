@@ -23,6 +23,7 @@ namespace twentyone
             Dealer.Hand = new List<Card>();
             Dealer.Stay = false;
             Dealer.Deck = new Deck();
+            Dealer.Deck.Shuffle();
             Console.WriteLine("Place your bet!");
 
             foreach (Player player in Players)
@@ -37,7 +38,7 @@ namespace twentyone
                 }
                 Bets[player] = bet;
             }
-            for (int i = 0; i > 2; i++)
+            for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine("Dealing...");
                 foreach (Player player in Players)
@@ -80,7 +81,7 @@ namespace twentyone
                     {
                         Console.Write("{0} ", card.ToString());
                     }
-                    // creating more space in the console.
+                    // \n = new line to create more space in the console.
                     Console.WriteLine("\n\nHit or stay?");
                     string answer = Console.ReadLine().ToLower();
                     if (answer == "stay")

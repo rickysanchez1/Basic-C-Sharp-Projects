@@ -20,7 +20,7 @@ namespace twentyone
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
             string answer = Console.ReadLine().ToLower();
             // if player is actively playing
-            if (answer == "yes" || answer == "yeah" || answer == "yea" || answer == "ya")
+            if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
             {
                 // Create new player using constructor in player class to set the properties
                 Player player = new Player(playerName, bank);
@@ -30,7 +30,7 @@ namespace twentyone
                 game += player;
                 // player is currently playing
                 player.isActivelyPlaying = true;
-                // whilte player is actively playing, play game
+                // while player is actively playing, play game
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
                     game.Play();

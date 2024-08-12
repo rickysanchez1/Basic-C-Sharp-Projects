@@ -8,10 +8,13 @@ namespace twentyone
 {
     public abstract class Game
     {
+        // private lists
+        private List<Player> _players = new List<Player>();
+        private Dictionary<Player, int> _bets = new Dictionary<Player, int>();
         // Using Player instead of string since we have a player class
-        public List<Player> Players { get; set; }
+        public List<Player> Players { get { return _players; } set { _players = value; } }
         public string Name { get; set; }
-        public Dictionary<Player, int> Bets { get; set; }
+        public Dictionary<Player, int> Bets { get { return _bets; } set { _bets = value; } }
 
         // any class inheriting this class must implement this method
         public abstract void Play();
