@@ -68,6 +68,7 @@ namespace twentyone
                         {
                             Dealer.Balance += entry.Value;
                         }
+                        return;
                     }
                 }
             }
@@ -100,13 +101,15 @@ namespace twentyone
                         Console.WriteLine("{0} Busted! You lose your bet of {1}. Your balance is now {2}.", player.Name, Bets[player], player.Balance);
                         Console.WriteLine("Do you want to play again?");
                         answer = Console.ReadLine().ToLower();
-                        if (answer == "yes" || answer == "yeah")
+                        if (answer == "yes" || answer == "yeah" || answer == "y")
                         {
                             player.isActivelyPlaying = true;
+                            return;
                         }
                         else
                         {
                             player.isActivelyPlaying = false;
+                            return;
                         }
                     }
                 }
