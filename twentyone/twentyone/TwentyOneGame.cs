@@ -40,7 +40,7 @@ namespace twentyone
             for (int i = 0; i > 2; i++)
             {
                 Console.WriteLine("Dealing...");
-                foreach (Player player in Player)
+                foreach (Player player in Players)
                 {
                     Console.Write("{0}: ", player.Name);
                     Dealer.Deal(player.Hand);
@@ -70,7 +70,7 @@ namespace twentyone
                     }
                 }
             }
-            foreach (Player player in players)
+            foreach (Player player in Players)
             {
                 while (!player.Stay)
                 {
@@ -142,12 +142,39 @@ namespace twentyone
             foreach (Player player in Players)
             {
                 // this boolean can now have the value null
-                bool? playerWon = TwentyOneRules.CompareHands(player.Hand, Dealer, Hand);
+                bool? playerWon = TwentyOneRules.CompareHands(player.Hand, Dealer.Hand);
+                if (playerWon == null) 
+                {
+                    Console.WriteLine("Push! no one wins!");
+                    player.Balance += Bets[player];
+                }
+                else if (playerWon == true)
+                {
+                    Console.WriteLine("{0} won {1}!", player.Name, Bets[player]);
+                    player.Balance += (Bets[player] * 2);
+                    Dealer.Balance -= Bets[player];
+                }
+                else
+                {
+                    Console.WriteLine("Dealer wins {0}!", Bets[player]);
+                    Dealer.Balance += Bets[player];
+                }
+                Console.WriteLine("Play again?");
+                string answer = Console.ReadLine().ToLower();
+                if (answer == "yes" || answer == "yeah")
+                {
+                    player.isActivelyPlaying = true;
+                }
+                else
+                {
+                    player.isActivelyPlaying = false;
+                }
             }
         }
         public override void ListPlayers()
         {
-            
+            Console.WriteLine("21 Players: ");
+            base.ListPlayers();
         }
         // method must match interface
         public void WalkAway(Player player)
