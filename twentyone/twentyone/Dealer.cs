@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace twentyone
 {
@@ -17,8 +18,16 @@ namespace twentyone
         {
             // Take the first card from the deck and add it to hand.
             Hand.Add(Deck.Cards.First());
+            // Appending Cards dealt
+            string card = string.Format(Deck.Cards.First().ToString() + "\n");
             // Access and display the first card in Deck and converts it to a string
-            Console.WriteLine(Deck.Cards.First().ToString() + "\n");
+            Console.WriteLine(card);
+            // Log to path
+            using (StreamWriter file = new StreamWriter(@"C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\log.txt", true))
+            {
+                // Write this variable to path
+                file.WriteLine(card);
+            }
             // Access first card from the deck and remove it from deck
             Deck.Cards.RemoveAt(0);
         }
