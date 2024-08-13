@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace twentyone
+namespace Casino
 {
     // a class is a model, a design for an object
     // the card class has a property of data type string called Suit. you can get or set this property.
