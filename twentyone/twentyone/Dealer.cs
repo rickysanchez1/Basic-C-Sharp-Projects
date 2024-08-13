@@ -25,6 +25,8 @@ namespace twentyone
             // Log to path
             using (StreamWriter file = new StreamWriter(@"C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\log.txt", true))
             {
+                // DateTime.Now to return the datetime of this object.
+                file.WriteLine(DateTime.Now);
                 // Write this variable to path
                 file.WriteLine(card);
             }
