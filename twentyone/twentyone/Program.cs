@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Casino;
-using Casino.TwentyOne;
+using Casino.twentyone;
+
 
 namespace twentyone
 {
