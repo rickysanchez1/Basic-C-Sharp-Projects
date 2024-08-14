@@ -14,9 +14,12 @@ namespace twentyone
     {
         static void Main(string[] args)
         {
+            const string casinoName = "Grand Hotel and Casino";
+
+            Guid identifier = Guid.NewGuid();
 
             // Welcome new player 
-            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name." + casinoName);
             // create var for new player
             string playerName = Console.ReadLine();
             Console.WriteLine("And how much money did you bring today?");
@@ -29,6 +32,14 @@ namespace twentyone
             {
                 // Create new player using constructor in player class to set the properties
                 Player player = new Player(playerName, bank);
+                // Created Guid for new player
+                player.Id = Guid.NewGuid();
+                
+                using (StreamWriter file = new StreamWriter(@"C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\log.txt", true))
+                {
+                    // Logging player id
+                    file.WriteLine(player.Id);
+                }
                 // create new instance of twentyonegame
                 Game game = new TwentyOneGame();
                 // Add current player to twentyonegame

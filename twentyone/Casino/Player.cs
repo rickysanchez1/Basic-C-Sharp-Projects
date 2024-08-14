@@ -7,6 +7,11 @@ namespace Casino
 {
     public class Player
     {
+        // assign name to name and if they dont provide a beg balance assign 100.
+        public Player(string name) : this(name, 100)
+        {
+        }
+        
         public Player(string name, int beginningBalance)
         {
             Hand = new List<Card>();
@@ -20,6 +25,9 @@ namespace Casino
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
         public bool Stay { get; set; }
+        // Creating property for Guid ID
+        public Guid Id { get; set; }
+
 
         public bool Bet(int amount)
         {
