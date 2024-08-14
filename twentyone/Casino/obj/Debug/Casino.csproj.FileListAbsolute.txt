@@ -3,3 +3,4 @@ C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\Casino
 C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\Casino\obj\Debug\Casino.csproj.CoreCompileInputs.cache
 C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\Casino\obj\Debug\Casino.dll
 C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\Casino\obj\Debug\Casino.pdb
+C:\Users\sinp3\OneDrive\Documents\GitHub\Basic-C-Sharp-Projects\twentyone\Casino\obj\Debug\Casino.csproj.AssemblyReference.cache
