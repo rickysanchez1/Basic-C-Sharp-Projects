@@ -24,6 +24,21 @@ namespace twentyone
             Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name." + casinoName);
             // create var for new player
             string playerName = Console.ReadLine();
+            // call to print out a log of exceptions
+            if (playerName.ToLower() == "admin")
+            {
+                List<ExceptionEntity> Exceptions = ReadException();
+                foreach (var exception in Exceptions)
+                {
+                    Console.Write(exception.Id + " ");
+                    Console.Write(exception.ExceptionType + " ");
+                    Console.Write(exception.TimeStamp + " ");
+                    Console.WriteLine();
+                }
+                Console.ReadLine();
+                return;
+            }
+
 
             // Setting value to false so while statement hits.
             bool validAnswer = false;
@@ -31,7 +46,7 @@ namespace twentyone
             // Validating input are entered as digits
             while (!validAnswer)
             {
-                Console.WriteLine("And how much oney did you bring today?");
+                Console.WriteLine("And how much money did you bring today?");
                 {
                     validAnswer = int.TryParse(Console.ReadLine(), out bank);
                     if (!validAnswer) Console.WriteLine("Please enter digits only, no decimals.");
@@ -88,7 +103,6 @@ namespace twentyone
             Console.WriteLine("Feel free to look around the casino. Bye for now.");
 
             
-
             
 
            
@@ -120,6 +134,42 @@ namespace twentyone
                 command.ExecuteNonQuery();
                 connection.Close();
             }
+        }
+        private static List<ExceptionEntity> ReadException()
+        {
+            string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=TwentyOneGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            // Asking for everything in the tables
+            string queryString = @"SELECT Id, ExceptionType, ExceptionMessage, TimeStamp from Exceptions";
+            // Creating List to return
+            List<ExceptionEntity> Exceptions = new List<ExceptionEntity>();
+            // Open connection by making a new Sqlconnection object and pass in connectionString
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // creating new sqlcommand object and pasing queryString and connection
+                SqlCommand command = new SqlCommand(queryString, connection);
+                // Open connection
+                connection.Open();
+                // creating SqlDataReader object. Executing reader and assigning it the reader object
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Loop through each record and create new ExceptionEntity object
+                while (reader.Read())
+                {
+                    // Map the information back to our object. convert Id to int/string/DateTime for each object
+                    ExceptionEntity exception = new ExceptionEntity();
+                    // the reader object maps to the column field.
+                    exception.Id = Convert.ToInt32(reader["Id"]);
+                    exception.ExceptionType = reader["ExceptionType"].ToString();
+                    exception.ExceptionMessage = reader["ExceptionMessage"].ToString();
+                    exception.TimeStamp = Convert.ToDateTime(reader["TimeStamp"]);
+                    // Add to to list
+                    Exceptions.Add(exception);
+                }
+                connection.Close();
+            }
+            // return exception entites
+            return Exceptions;
+
         }
     }
 
