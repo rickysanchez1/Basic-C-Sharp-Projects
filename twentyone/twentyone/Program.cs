@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,15 +67,17 @@ namespace twentyone
                     {
                         game.Play();
                     }
-                    catch (FraudException)
+                    catch (FraudException ex)
                     {
-                        Console.WriteLine("Security, kick this person out!");
+                        Console.WriteLine(ex.Message);
+                        UpdateDbWithException(ex);
                         Console.ReadLine();
                         return;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Console.WriteLine("An error occurred. Please contact your system administrator.");
+                        UpdateDbWithException(ex);
                         Console.ReadLine();
                         return;
                     }
@@ -91,6 +95,31 @@ namespace twentyone
           
 
             Console.ReadLine();
+        }
+        // Creating method to access db
+        private static void UpdateDbWithException(Exception ex)
+        {
+            // Creating string variable to access the database
+            string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=TwentyOneGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            // Creating string var to edit table
+            string queryString = @"INSERT INTO Exceptions (ExceptionType, ExceptionMessage, TimeStamp) VALUES 
+                                (@ExceptionType, @ExceptionMessage, @TimeStamp)";
+            // open and closing the sql connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@ExceptionType", SqlDbType.VarChar);
+                command.Parameters.Add("@ExceptionMessage", SqlDbType.VarChar);
+                command.Parameters.Add("@TimeStamp", SqlDbType.DateTime);
+
+                command.Parameters["@ExceptionType"].Value = ex.GetType().ToString();
+                command.Parameters["@ExceptionMessage"].Value = ex.Message;
+                command.Parameters["@TimeStamp"].Value = DateTime.Now;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
     }
 
