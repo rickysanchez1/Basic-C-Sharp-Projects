@@ -53,6 +53,63 @@ namespace CarInsurance.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Base start
+                decimal quoteTotal = 50;
+                var today = DateTime.Today;
+                // Calculating age
+                var age = today.Year - insuree.DateOfBirth.Year;
+                if (age <= 18)
+                {
+                    // Adding 100 if user is 18 or under
+                    quoteTotal += 100;
+                }
+
+                if (age >= 19 && age <= 25)
+                {
+                    // If users age is between 19-25 add 50
+                    quoteTotal += +50;
+                }
+                if (age > 25)
+                {
+                    // If user is 26 or older, add 25
+                    quoteTotal += +25;
+                }
+                if (insuree.CarYear < 2000)
+                {
+                    // If vehicle is older than 2000, add 25
+                    quoteTotal += +25;
+                }
+                if (insuree.CarYear > 2015)
+                {
+                    // if vehicle age is after 2015, add 255
+                    quoteTotal += +25;
+                }
+                if (insuree.CarMake == "porsche")
+                {
+                    // If vehicle is a porsche, add 25
+                    quoteTotal += +25;
+                }
+                if (insuree.CarMake == "porsche" && insuree.CarModel == "911 carrera")
+                {
+                    // If car model is porsche and model is 911 carrera, add 50
+                    quoteTotal += +50;
+                }
+                if (insuree.SpeedingTickets < 0)
+                {
+                    // Add 10 for each speeding ticket
+                    decimal tickets = insuree.SpeedingTickets * 10;
+                    
+                    quoteTotal += +tickets;
+                }
+                if (insuree.DUI == true)
+                {
+                    // If user has a DUI, add 25%
+                    quoteTotal *= 1.25m;                    
+                }
+                if (insuree.CoverageType == true)
+                {
+                    quoteTotal *= 1.50m;
+                }
                 db.Insurees.Add(insuree);
                 db.SaveChanges();
                 return RedirectToAction("Index");
