@@ -1,0 +1,12 @@
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\StudentDB.exe.config
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\StudentDB.exe
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\StudentDB.pdb
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\EntityFramework.dll
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\EntityFramework.xml
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\obj\Debug\StudentDB.csproj.AssemblyReference.cache
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\obj\Debug\StudentDB.csproj.CoreCompileInputs.cache
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\obj\Debug\StudentDB.csproj.Up2Date
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\obj\Debug\StudentDB.exe
+C:\Users\sinp3\source\repos\StudentDB\StudentDB\obj\Debug\StudentDB.pdb
